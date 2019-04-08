@@ -1,0 +1,52 @@
+libname analysis '/folders/myfolders/BIOS 664/SamplingProject/Analysis';
+
+FILENAME REFFILE 
+	'/folders/myfolders/BIOS 664/SamplingProject/Analysis/FinalSample.xlsx';
+
+PROC IMPORT DATAFILE=REFFILE DBMS=XLSX OUT=WORK.IMPORT replace;
+	GETNAMES=YES;
+RUN;
+
+proc sort data=import;
+	by school;
+run;
+
+proc transpose data=import out=heights_school;
+	by school;
+run;
+
+data heights_school;
+	set heights_school;
+
+	/**if cmiss(of _all_) then delete;**/
+	rename COL1=Height _NAME_=Player;
+	drop _LABEL_;
+run;
+
+data school_division;
+	set import;
+	keep school division;
+run;
+
+data school_division_height;
+	merge heights_school school_division;
+	by school;
+
+	if cmiss(of _all_) then
+		delete;
+
+	if Player eq 'Division' then
+		delete;
+run;
+
+proc sort data=school_division_height;
+	by Division;
+run;
+
+data analysis.school_division_height_totals;
+	set school_division_height;
+	
+	if Division = 1 then PopCount = 351;
+	else if Division = 1 then PopCount = 314;
+	else if Division = 1 then PopCount =440;
+run;

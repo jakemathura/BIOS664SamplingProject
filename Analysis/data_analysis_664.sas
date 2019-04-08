@@ -1,0 +1,8 @@
+FILENAME REFFILE '/folders/myfolders/BIOS 664/SamplingProject/Analysis/FinalSample.xlsx';
+
+PROC IMPORT DATAFILE=REFFILE
+	DBMS=XLSX
+	OUT=WORK.IMPORT;
+	GETNAMES=YES;
+RUN;
+
