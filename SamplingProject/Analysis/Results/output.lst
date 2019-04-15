@@ -1,0 +1,47 @@
+                                            The SAS System            11:54 Monday, April 15, 2019  10
+
+
+
+                                  S U D A A N
+            Software for the Statistical Analysis of Correlated Data
+          Copyright       Research Triangle Institute       March 2018
+                                 Release 11.0.3
+
+
+DESIGN SUMMARY: Variances will be computed using the Taylor Linearization Method, Assuming a Without
+Replacement (WOR) Design
+    Sample Weight: SAMPLINGWEIGHT
+    Stage 1 Stratification Variable: DIVISION
+    Stage 1 Population Count Variable: _ZERO_
+    Stage 2 Stratification Variable: SCHOOLNUM
+    Stage 2 Population Count Variable: POPCOUNT
+
+
+Number of observations read    :   1833    Weighted count :    16467
+Denominator degrees of freedom :    118
+
+
+
+
+Date: 04-15-2019                                SUDAAN                                    Page:   1
+Time: 12:55:08                                                                            Table: 1
+
+Variance Estimation Method: Taylor Series (WOR)
+by: Variable, SUDAAN Reserved Variable One.
+
+----------------------------------------------------------------
+|                 |                  | SUDAAN Reserved         |
+| Variable        |                  | Variable One            |
+|                 |                  |-------------------------|
+|                 |                  | Total      | 1          |
+----------------------------------------------------------------
+|                 |                  |            |            |
+| HEIGHT          | Sample Size      |       1833 |       1833 |
+|                 | Est Pop Size     |   16467.35 |   16467.35 |
+|                 | Mean             |      75.70 |      75.70 |
+|                 | SE Mean          |       0.08 |       0.08 |
+|                 | Lower 95% Limit  |            |            |
+|                 |  Mean            |      75.55 |      75.55 |
+|                 | Upper 95% Limit  |            |            |
+|                 |  Mean            |      75.85 |      75.85 |
+----------------------------------------------------------------
